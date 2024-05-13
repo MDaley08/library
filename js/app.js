@@ -1,23 +1,16 @@
 const myLibrary = [];
 
 function Book(title, author, pages){
-    let errorString = "input invalid, you have entered invalid: "
-    let errorThrown = false;
 
-    if(typeof title !== 'string'){
-        errorString += 'title ';
-        errorThrown = true;
-    } 
-    if(typeof author !== 'string'){
-        errorString += 'author '
-        errorThrown = true;
-    } 
-    if(typeof pages !== 'number'){
-        errorString += 'pages';
-        errorThrown = true;
-    } 
-    if(errorThrown){
-        console.log(errorString);
+    let errorString = "Book: input invalid, you have entered invalid: "
+    let errors = [];
+
+    if(typeof title !== 'string') errors.push('title'); 
+    if(typeof author !== 'string') errors.push('author');
+    if(typeof pages !== 'number') errors.push('pages');
+
+    if(errors.length){
+        console.log(errorString + errors.join(", "));
         return;
     }
 
@@ -31,16 +24,20 @@ function Book(title, author, pages){
 }
 
 function addBookToLibrary(book){
-    if(Object.getPrototypeOf(Book) !== book.prototype){
-        console.log("invalid object");
+
+    if(typeof book !== 'object' || book === null){
+        console.log(`addBookToLibrary: \"${book}\" is not an object`);
         return;
     }
-    myLibrary.push(book);
 
+    if(!book.title || !book.author || !book.pages){
+        console.log(`addBookToLibrary: \"${JSON.stringify(book)}\" is not a valid Book object`);
+        return;
+    }
+
+    myLibrary.push(book);
 }
 
 function displayBooks(){
 
 }
-
-let test = new Book("the reacher", 200, "200");
