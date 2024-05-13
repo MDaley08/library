@@ -23,7 +23,7 @@ function Book(title, author, pages){
     }
 }
 
-function addBookToLibrary(book){
+const addBookToLibrary = (book) => {
 
     if(typeof book !== 'object' || book === null){
         console.log(`addBookToLibrary: \"${book}\" is not an object`);
@@ -38,6 +38,31 @@ function addBookToLibrary(book){
     myLibrary.push(book);
 }
 
-function displayBooks(){
+const createBookElement = (book) => {
+    let bookElement = document.createElement('div');
+    bookElement.classList.add('book');
+
+    let title = document.createElement('h3');
+    let author = document.createElement('p');
+    let pages = document.createElement('p');
+
+    title.textContent = book.title;
+    author.textContent = `Author: ${book.author}`;
+    pages.textContent = `Pages: ${book.pages}`;
+
+    bookElement.appendChild(title);
+    bookElement.appendChild(author);
+    bookElement.appendChild(pages);
+
+    return bookElement;
+}
+let testbook = new Book('Catching a mocking bird','test',123)
+let bookContainer = document.getElementById('book-container');
+bookContainer.appendChild(createBookElement(testbook));
+bookContainer.appendChild(createBookElement(testbook));
+bookContainer.appendChild(createBookElement(testbook));
+bookContainer.appendChild(createBookElement(testbook));
+
+const displayBooks = ()=> {
 
 }
