@@ -1,0 +1,47 @@
+html{
+    font-size: calc(1vw + 0.8rem);
+}
+
+body > h1{
+    text-align: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button{
+    font-size: 1rem;
+    text-align: center;
+    width: fit-content;
+}
+
+#book-container{
+    display: grid;
+    gap:15px;
+    grid-template-columns: repeat(auto-fit,minmax(fit-content,20%));
+    border: 2px solid black;
+    width: 90%;
+    height: 90%;
+    padding: 20px;
+}
+
+
+.book{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-wrap: break-word;
+    border: 2px solid red;
+    padding: 15px;
+}
+.book p{
+    font-weight: 600;
+    margin:0
+}
+
+.book p span{
+    font-weight: 500;
+}
