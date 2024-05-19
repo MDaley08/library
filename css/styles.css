@@ -14,7 +14,11 @@
     --light-font-color: #ffe4bb;
     --dark-font-color: #2c1e0f;
 }
-
+/*
+-------------------------------------------------------
+general styling
+------------------------------------------------------- 
+ */
 html{
     font-size: calc(0.8vw + 0.5rem);
     font-family: "Architects Daughter";
@@ -35,12 +39,27 @@ body{
     background: var(--primary-color);
 }
 
-h1{
+button{
+    background-color: var(--light-accent-color);
+    box-sizing: border-box;
     color: var(--light-font-color);
-    font-weight: 600;
-    -webkit-text-stroke: var(--light-accent-color) 0.1px;
-    font-size: 3rem;
-    cursor: default;
+    font-size: 1.1rem;
+    font-family: "Architects Daughter";
+    font-weight: 700;
+    padding: 5px 15px;
+    border: 2px var(--dark-accent-color) solid;
+    border-radius: calc(4% + 4px);
+    text-align: center;
+    width: fit-content;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: all .2s;
+
+}
+
+button:hover{
+    scale: 1.025 1.025;
+    opacity: 1;
 }
 
 .delete-btn:hover{
@@ -49,6 +68,19 @@ h1{
 
 .submit-btn:hover{
     background-color: rgb(0, 151, 0);
+}
+
+/*
+-------------------------------------------------------
+main page section styling
+------------------------------------------------------- 
+ */
+h1{
+    color: var(--light-font-color);
+    font-weight: 600;
+    -webkit-text-stroke: var(--light-accent-color) 0.1px;
+    font-size: 3rem;
+    cursor: default;
 }
 
 main{
@@ -62,6 +94,11 @@ main{
     box-shadow: 0px 0px 12px var(--dark-accent-color), 0 0 5vw #8d5925 inset;
     background-color: rgb(255, 234, 199);
 }
+/*
+-------------------------------------------------------
+dialog and book form
+------------------------------------------------------- 
+ */
 dialog{
     position:absolute;
     border: none;
@@ -87,6 +124,50 @@ form .buttons{
     padding-left: 5%;
     gap: 5%;
 }
+
+ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 6px;
+    padding: 0;
+}
+
+
+form .buttons{
+    margin-top: 5%;
+    display: flex;
+}
+label{
+    display: inline-block;
+    min-width: 25%;
+}
+input{
+    font-size: 1rem;
+    border-style: none;
+    border-radius: 2px;
+    color: var(--light-font-color);
+    background-color: var(--light-accent-color);
+    accent-color: var(--light-accent-color);
+    cursor: pointer;
+}
+
+input:focus{
+    outline-color: var(--dark-accent-color);
+}
+input[type=text],input[type=number]{
+    width: 60%;
+}
+
+input[type=checkbox]{
+    scale: 1.3;
+}
+
+/*
+-------------------------------------------------------
+book-container and book styling 
+------------------------------------------------------- 
+ */
 #book-container{
     display: grid;
     box-sizing: border-box;
@@ -99,33 +180,6 @@ form .buttons{
     padding: 15px;
     scrollbar-color: var(--dark-accent-color) var(--light-accent-color );
 }
-
-
-
-
-button{
-    background-color: var(--light-accent-color);
-    box-sizing: border-box;
-    color: var(--light-font-color);
-    font-size: 1.1rem;
-    font-family: "Architects Daughter";
-    font-weight: 700;
-    padding: 5px 15px;
-    border: 2px var(--dark-accent-color) solid;
-    border-radius: calc(4% + 4px);
-    text-align: center;
-    width: fit-content;
-    cursor: pointer;
-    opacity: 0.9;
-    transition: all .2s;
-
-}
-
-button:hover{
-    scale: 1.025 1.025;
-    opacity: 1;
-}
-
 
 .book{
 
@@ -176,41 +230,5 @@ button:hover{
 }
 
 
-ul{
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    gap: 6px;
-    padding: 0;
-}
 
-
-form .buttons{
-    margin-top: 5%;
-    display: flex;
-}
-label{
-    display: inline-block;
-    min-width: 25%;
-}
-input{
-    font-size: 1rem;
-    border-style: none;
-    border-radius: 2px;
-    color: var(--light-font-color);
-    background-color: var(--light-accent-color);
-    accent-color: var(--light-accent-color);
-    cursor: pointer;
-}
-
-input:focus{
-    outline-color: var(--dark-accent-color);
-}
-input[type=text],input[type=number]{
-    width: 60%;
-}
-
-input[type=checkbox]{
-    scale: 1.3;
-}
 
