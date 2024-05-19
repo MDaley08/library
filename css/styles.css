@@ -1,47 +1,216 @@
-html{
-    font-size: calc(1vw + 0.8rem);
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+
+.architects-daughter-regular{
+    font-family: "Architects Daughter";
+    font-weight: 400;
+    font-style: normal;
 }
 
-body > h1{
+:root{
+    --primary-color: #fff3d9;
+    --light-accent-color: #886242;
+    --dark-accent-color: #503416;
+    --light-font-color: #ffe4bb;
+    --dark-font-color: #2c1e0f;
+}
+
+html{
+    font-size: calc(0.8vw + 0.5rem);
+    font-family: "Architects Daughter";
+}
+
+*{
+    margin: 0;
+}
+
+body{
+    display: flex;
+    box-sizing: border-box;
+    height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+    padding: 3vh 15vw;
     text-align: center;
+    background: var(--primary-color);
+}
+
+h1{
+    color: var(--light-font-color);
+    font-weight: 600;
+    -webkit-text-stroke: var(--light-accent-color) 0.1px;
+    font-size: 3rem;
+    cursor: default;
+}
+
+.delete-btn:hover{
+    background-color: rgb(196, 0, 0);
+}
+
+.submit-btn:hover{
+    background-color: rgb(0, 151, 0);
 }
 
 main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+    border-radius: 5px;
+    gap: 30px;
+    padding: 5% 12%;
+    box-shadow: 0px 0px 12px var(--dark-accent-color), 0 0 5vw #8d5925 inset;
+    background-color: rgb(255, 234, 199);
+}
+dialog{
+    position:absolute;
+    border: none;
+    font-size: 1.2rem;
+    top: 32%;
+    justify-self: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 12px var(--dark-accent-color), 0 0 3.5vw #8d5925 inset;
+    background-color: rgb(255, 234, 199);
+    padding: 2%;
 }
 
-button{
-    font-size: 1rem;
-    text-align: center;
-    width: fit-content;
+dialog::backdrop{
+    background-color: #44270785 ;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
 }
 
+form .buttons{
+    display: flex;
+    justify-content: center;
+    padding-left: 5%;
+    gap: 5%;
+}
 #book-container{
     display: grid;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-y: scroll;
+    background-color: var(--light-accent-color);
     gap:15px;
-    grid-template-columns: repeat(auto-fit,minmax(fit-content,20%));
-    border: 2px solid black;
-    width: 90%;
-    height: 90%;
-    padding: 20px;
+    grid-template-columns: repeat(3,1fr);
+    border-radius: 5px;
+    padding: 15px;
+    scrollbar-color: var(--dark-accent-color) var(--light-accent-color );
+}
+
+
+
+
+button{
+    background-color: var(--light-accent-color);
+    box-sizing: border-box;
+    color: var(--light-font-color);
+    font-size: 1.1rem;
+    font-family: "Architects Daughter";
+    font-weight: 700;
+    padding: 5px 15px;
+    border: 2px var(--dark-accent-color) solid;
+    border-radius: calc(4% + 4px);
+    text-align: center;
+    width: fit-content;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: all .2s;
+
+}
+
+button:hover{
+    scale: 1.025 1.025;
+    opacity: 1;
 }
 
 
 .book{
+
     display: flex;
+    color: var(--dark-accent-color);
     flex-direction: column;
+    background-color: var(--primary-color);
+    font-size: 1.2rem;
+    align-items: center;
     gap: 15px;
     overflow-wrap: break-word;
-    border: 2px solid red;
+    border-radius: 5px;
+    border: 10px solid var(--dark-accent-color);
     padding: 15px;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: all .35s;
+
 }
+
+.book:hover{
+    scale: 1.01 1.01;
+    opacity: 1;
+}
+.book *{
+    margin:0
+}
+
 .book p{
     font-weight: 600;
-    margin:0
+    font-size: 1.1rem;
+
 }
 
 .book p span{
     font-weight: 500;
 }
+
+.book .book-buttons{
+    display: flex;
+    min-width: 100%;
+    justify-content: space-evenly;
+}
+
+.book button{
+    font-size: 1rem;
+    flex: 0;
+}
+
+
+ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 6px;
+    padding: 0;
+}
+
+
+form .buttons{
+    margin-top: 5%;
+    display: flex;
+}
+label{
+    display: inline-block;
+    min-width: 25%;
+}
+input{
+    font-size: 1rem;
+    border-style: none;
+    border-radius: 2px;
+    color: var(--light-font-color);
+    background-color: var(--light-accent-color);
+    accent-color: var(--light-accent-color);
+    cursor: pointer;
+}
+
+input:focus{
+    outline-color: var(--dark-accent-color);
+}
+input[type=text],input[type=number]{
+    width: 60%;
+}
+
+input[type=checkbox]{
+    scale: 1.3;
+}
+
