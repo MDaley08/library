@@ -16,7 +16,7 @@
 }
 /*
 -------------------------------------------------------
-general styling
+general styling 
 ------------------------------------------------------- 
  */
 html{
@@ -101,10 +101,11 @@ dialog and book form
  */
 dialog{
     position:absolute;
+    box-sizing: border-box;
     border: none;
     font-size: 1.2rem;
     top: 32%;
-    justify-self: center;
+    left: 40%;
     border-radius: 5px;
     box-shadow: 0px 0px 12px var(--dark-accent-color), 0 0 3.5vw #8d5925 inset;
     background-color: rgb(255, 234, 199);
